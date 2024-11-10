@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Standard Deviation</title>
+</head>
+<body>
+    <h1>Standard Deviation Calculator</h1>
+    <form method="POST">
+        <label for="input">Enter numbers (comma-separated):</label>
+        <input type="text" id="input" name="input" required>
+        <input type="submit" value="Calculate">
+    </form>
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+    {% if result is not none %}
+        <h2>Standard Deviation for numbers ({{ input }}) = {{ result }}</h2>
+    {% endif %}
+    <a href="/">Back to Home</a>
+</body>
+</html>
