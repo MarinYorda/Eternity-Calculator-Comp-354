@@ -133,7 +133,7 @@ class EternityCalculator:
     def custom_pi(self):
         return 3.141592653589793
     
-        def custom_abs(self, x):
+    def custom_abs(self, x):
         #Custom implementation of the absolute value function.
         return x if x >= 0 else -x
 
