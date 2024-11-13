@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Combined Calculator</title>
+</head>
+<body>
+    <h1>Combined Calculator</h1>
+    <form method="POST">
+        <label for="input">Enter values (comma-separated):</label>
+        <input type="text" id="input" name="input" required>
+
+        <h3>Select Calculations:</h3>
+        <input type="checkbox" id="arccos" name="functions" value="arccos">
+        <label for="arccos">arccos(x)</label><br>
+
+        <input type="checkbox" id="exponential" name="functions" value="exponential">
+        <label for="exponential">a * b^x</label><br>
+
+        <input type="checkbox" id="logarithm" name="functions" value="logarithm">
+        <label for="logarithm">log_b(x)</label><br>
+
+        <input type="checkbox" id="gamma" name="functions" value="gamma">
+        <label for="gamma">Γ(x) (Gamma Function)</label><br>
+
+        <input type="checkbox" id="mad" name="functions" value="mad">
+        <label for="mad">MAD (Mean Absolute Deviation)</label><br>
+
+        <input type="checkbox" id="standard_deviation" name="functions" value="standard_deviation">
+        <label for="standard_deviation">σ (Standard Deviation)</label><br>
+
+        <input type="checkbox" id="sinh" name="functions" value="sinh">
+        <label for="sinh">sinh(x)</label><br>
+
+        <input type="checkbox" id="power" name="functions" value="power">
+        <label for="power">x^y (Power)</label><br>
+
+        <input type="submit" value="Calculate">
+    </form>
+
+    {% if error %}
+        <p style="color: red;">{{ error }}</p>
+    {% endif %}
+
+    {% if results %}
+        <h2>Results:</h2>
+        <ul>
+            {% for key, value in results.items() %}
+                <li><strong>{{ key }}:</strong> {{ value }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <a href="/">Back to Home</a>
+</body>
+</html>
