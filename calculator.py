@@ -1,11 +1,7 @@
 class EternityCalculator:
-    def __init__(self, array):
-        self.array = array
-
-    # Helper function to calculate sum manually
-    def manual_sum(self, arr):
+    def manual_sum(self, *args):
         total = 0
-        for num in arr:
+        for num in args:
             total += num
         return total
 
@@ -14,30 +10,32 @@ class EternityCalculator:
         if value < 0:
             return -value
         return value
-
-    def calculate_mean(self):
-        total = self.manual_sum(self.array)
-        return total / len(self.array)
-
-    def calculate_variance(self):
-        mean = self.calculate_mean()
+    def calculate_standard_deviation(self, *args):
+        # Calculate the mean manually
         total = 0
-        for x in self.array:
-            total += (x - mean) ** 2
-        return total / len(self.array)
+        count = 0
+        for x in args:
+            total += x
+            count += 1
+        mean = total / count
 
-    # Custom square root calculation using Babylonian method
-    def calculate_square_root(self, value, epsilon=0.00001):
-        if value < 0:
-            return None  # Square root of a negative number doesn't exist in real numbers
-        guess = value / 2.0
-        while self.manual_abs(guess * guess - value) > epsilon:
-            guess = (guess + value / guess) / 2.0
-        return guess
+        # Calculate the variance manually
+        variance_sum = 0
+        for x in args:
+            variance_sum += (x - mean) ** 2
+        variance = variance_sum / count
 
-    def calculate_standard_deviation(self):
-        variance = self.calculate_variance()
-        return self.calculate_square_root(variance)
+        # Calculate square root using a manual method (Newton's method), without abs()
+        def sqrt(n):
+            approx = n / 2.0
+            better_approx = (approx + n / approx) / 2.0
+            while (approx - better_approx) > 0.00001 or (
+                    better_approx - approx) > 0.00001:  # Manual check instead of abs()
+                approx = better_approx
+                better_approx = (approx + n / approx) / 2.0
+            return approx
+
+        return sqrt(variance)
 
     # Gamma function using Lanczos approximation without built-in math functions
     def calculate_gamma(self, x):
@@ -68,14 +66,15 @@ class EternityCalculator:
             return self.custom_sqrt(2 * self.custom_pi()) * (t ** (x + 0.5)) * self.custom_exp(-t) * y
 
     # Mean Absolute Deviation (MAD) function
-    def calculate_mad(self, array):
-        if not array:
+    def calculate_mad(self, *args):
+        if not args:
             return 0
-        mean = sum(array) / len(array)
-        absolute_sum = sum(abs(x - mean) for x in array)
-        mad = absolute_sum / len(array)
+        mean = self.manual_sum(args) / len(args)
+        absolute_sum = self.manual_sum(self.manual_abs(x - mean) for x in args)
+        mad = absolute_sum / len(args)
         return mad
 
+    # Logarithm function using the Newton-Raphson method for natural log
     # Logarithm function using the Newton-Raphson method for natural log
     def calculate_logarithm(self, value, base=None):
         if value <= 0:
@@ -94,7 +93,7 @@ class EternityCalculator:
             while n < 100:
                 exp_result = self.custom_exp(result)
                 result -= (exp_result - x) / exp_result
-                if abs(exp_result - x) < tolerance:
+                if self.manual_abs(exp_result - x) < tolerance:
                     break
                 n += 1
             return result
@@ -117,7 +116,7 @@ class EternityCalculator:
         term = x
         factor = 1
         n = 0
-        while abs(term) > 1e-10:
+        while self.manual_abs(term) > 1e-10:
             result += term / (2 * n + 1)
             factor *= (2 * n + 1) / (2 * n + 2)
             term *= (x * x) * factor
@@ -144,7 +143,7 @@ class EternityCalculator:
         # If power is an integer
         result = 1
         if power == int(power):
-            for _ in range(abs(int(power))):
+            for _ in range(self.manual_abs(int(power))):
                 result *= base
             if power < 0:
                 result = 1 / result
@@ -166,7 +165,7 @@ class EternityCalculator:
         term = x
         n = 1
         sign = 1
-        while abs(term) > 1e-10:
+        while self.manual_abs(term) > 1e-10:
             sine += term
             term = -term * x * x / ((2 * n) * (2 * n + 1))
             n += 1
@@ -177,7 +176,7 @@ class EternityCalculator:
         result = 1
         term = 1
         n = 1
-        while abs(term) > 1e-10:
+        while self.manual_abs(term) > 1e-10:
             term *= x / n
             result += term
             n += 1
@@ -189,7 +188,6 @@ class EternityCalculator:
             raise ValueError("Cannot compute square root of a negative number.")
         guess = x
         epsilon = 1e-10
-        while abs(guess * guess - x) > epsilon:
+        while self.manual_abs(guess * guess - x) > epsilon:
             guess = (guess + x / guess) / 2
         return guess
-
