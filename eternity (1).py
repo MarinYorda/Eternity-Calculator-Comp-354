@@ -133,8 +133,9 @@ class EternityCalculator:
     def custom_pi(self):
         return 3.141592653589793
     
-    def custom_e(self):
-        return 2.718281828459045
+        def custom_abs(self, x):
+        #Custom implementation of the absolute value function.
+        return x if x >= 0 else -x
 
     def custom_sin(self, x):
         # Taylor series expansion for sin(x)
@@ -142,7 +143,7 @@ class EternityCalculator:
         term = x
         n = 1
         sign = 1
-        while abs(term) > 1e-10:
+        while self.custom_abs(term) > 1e-10:
             sine += term
             term = -term * x * x / ((2 * n) * (2 * n + 1))
             n += 1
@@ -153,7 +154,7 @@ class EternityCalculator:
         result = 1
         term = 1
         n = 1
-        while abs(term) > 1e-10:
+        while self.custom_abs(term) > 1e-10:
             term *= x / n
             result += term
             n += 1
@@ -165,6 +166,6 @@ class EternityCalculator:
             raise ValueError("Cannot compute square root of a negative number.")
         guess = x
         epsilon = 1e-10
-        while abs(guess * guess - x) > epsilon:
+        while self.custom_abs(guess * guess - x) > epsilon:
             guess = (guess + x / guess) / 2
         return guess
