@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eternity Calculator</title>
+    <script>
+        function insertFunction(functionName) {
+            const inputField = document.getElementById('input_expression');
+            inputField.value += functionName + '('; // Append the function name and an open parenthesis
+        }
+    </script>
+</head>
+<body>
+    <h1>Eternity Calculator</h1>
+
+    <form method="POST" action="{{ url_for('combined_calculator') }}">
+        <label for="input_expression">Enter a mathematical expression:</label>
+        <input type="text" id="input_expression" name="input_expression" placeholder="e.g. 1 + log_b(10, 2)">
+        <button type="submit">Calculate</button>
+    </form>
+
+    <div>
+        <button type="button" onclick="insertFunction('log_b')">log_b</button>
+        <button type="button" onclick="insertFunction('arccos')">arccos</button>
+        <button type="button" onclick="insertFunction('exp')">exp</button>
+        <button type="button" onclick="insertFunction('gamma')">gamma</button>
+        <button type="button" onclick="insertFunction('mad')">mad</button>
+        <button type="button" onclick="insertFunction('standard_deviation')">standard_deviation</button>
+        <button type="button" onclick="insertFunction('sinh')">sinh</button>
+        <button type="button" onclick="insertFunction('power')">power</button>
+    </div>
+
+    {% if result %}
+        <p>Result: {{ result }}</p>
+    {% elif error %}
+        <p>Error: {{ error }}</p>
+    {% endif %}
+</body>
+</html>
