@@ -6,9 +6,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eternity Calculator</title>
     <script>
+        function insertValue(value) {
+            const inputField = document.getElementById('input_expression');
+            inputField.value += value;
+        }
         function insertFunction(functionName) {
             const inputField = document.getElementById('input_expression');
             inputField.value += functionName + '('; // Append the function name and an open parenthesis
+        }
+
+        // Function to clear the input field
+        function clearInput() {
+            document.getElementById('input_expression').value = '';
+        }
+
+        // Function to toggle the sign of the current number in the input field
+        function toggleSign() {
+            const inputField = document.getElementById('input_expression');
+            let currentValue = inputField.value.trim(); // Get the current value
+
+            // Check if the current value starts with a negative sign
+            if (currentValue.startsWith('-')) {
+                // If it starts with '-', remove it to make it positive
+                inputField.value = currentValue.substring(1);
+            } else {
+                // If it doesn't have a '-', add it to make the number negative
+                inputField.value = '-' + currentValue;
+            }
+        }
+
+        // Function to insert a decimal point if the number doesn't already contain one
+        function insertDecimal() {
+            const inputField = document.getElementById('input_expression');
+            const currentValue = inputField.value.trim();
+
+            // Check if the last number doesn't already have a decimal point
+            const lastNumber = currentValue.split(/[\s+\-*\/()]/).pop(); // Split on operators or parentheses
+
+            if (!lastNumber.includes('.')) {
+                inputField.value += '.';
+            }
         }
     </script>
 </head>
@@ -30,6 +67,33 @@
         <button type="button" onclick="insertFunction('standard_deviation')">standard_deviation</button>
         <button type="button" onclick="insertFunction('sinh')">sinh</button>
         <button type="button" onclick="insertFunction('power')">power</button>
+    </div>
+
+    <!-- Basic math operation buttons -->
+    <div>
+        <button type="button" onclick="insertValue(' + ')">+</button>
+        <button type="button" onclick="insertValue(' - ')">-</button>
+        <button type="button" onclick="insertValue(' * ')">*</button>
+        <button type="button" onclick="insertValue(' / ')">/</button>
+        <button type="button" onclick="insertValue('%')">%</button>
+        <button type="button" onclick="insertValue('(')">(</button>
+        <button type="button" onclick="insertValue(')')">)</button>
+        <button type="button" onclick="clearInput()">C</button> 
+        <button type="button" onclick="toggleSign()">+/-</button>
+    </div>
+
+    <div>
+        <button type="button" onclick="insertValue('1')">1</button>
+        <button type="button" onclick="insertValue('2')">2</button>
+        <button type="button" onclick="insertValue('3')">3</button>
+        <button type="button" onclick="insertValue('4')">4</button>
+        <button type="button" onclick="insertValue('5')">5</button>
+        <button type="button" onclick="insertValue('6')">6</button>
+        <button type="button" onclick="insertValue('7')">7</button>
+        <button type="button" onclick="insertValue('8')">8</button>
+        <button type="button" onclick="insertValue('9')">9</button>
+        <button type="button" onclick="insertValue('0')">0</button>
+         <button type="button" onclick="insertDecimal()">.</button>
     </div>
 
     {% if result %}
