@@ -1,4 +1,4 @@
-from eternity import EternityCalculator
+from calculator import EternityCalculator
 
 # Test for Standard Deviation, Mean, and Variance with user-provided values
 user_input = input("Enter the values for which you want to calculate Standard Deviation, Mean, and Variance, separated by spaces: ")
