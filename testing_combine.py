@@ -40,6 +40,11 @@ def safe_eval(expression, calculator):
                 return left / right
             else:
                 raise ValueError("Unsupported operator")
+        elif isinstance(node, ast.UnaryOp):  # For unary operations like negation (-x)
+            if isinstance(node.op, ast.USub):  # Handle negation
+                return -eval_node(node.operand)
+            else:
+                raise ValueError("Unsupported unary operation")
         elif isinstance(node, ast.Call):  # For function calls
             func_name = node.func.id
             if func_name in function_mapping:
@@ -68,7 +73,7 @@ def combined_calculator():
         except ValueError as e:
             error = str(e)
 
-    return render_template('combined_calculator_v2.html', result=result, error=error)
+    return render_template('combined_calculator_v3.html', result=result, error=error)
 
 
 if __name__ == '__main__':
