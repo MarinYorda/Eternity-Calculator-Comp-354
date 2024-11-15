@@ -71,6 +71,7 @@ class EternityCalculator:
     def calculate_mad(self, array):
         if not array:
             return 0
+
         mean = self.manual_sum(array) / len(array)
         absolute_sum = self.manual_sum(self.manual_abs(x - mean) for x in array)
         mad = absolute_sum / len(array)
@@ -94,6 +95,7 @@ class EternityCalculator:
             while n < 100:
                 exp_result = self.custom_exp(result)
                 result -= (exp_result - x) / exp_result
+
                 if self.manual_abs(exp_result - x) < tolerance:
                     break
                 n += 1
@@ -117,6 +119,7 @@ class EternityCalculator:
         term = x
         factor = 1
         n = 0
+
         while self.manual_abs(term) > 1e-10:
             result += term / (2 * n + 1)
             factor *= (2 * n + 1) / (2 * n + 2)
@@ -159,7 +162,7 @@ class EternityCalculator:
         return 3.141592653589793
     
     def custom_e(self):
-        return 2.718281828459045
+        return 2.718281828459045235360287471352
 
     def custom_sin(self, x):
         # Taylor series expansion for sin(x)
@@ -178,6 +181,7 @@ class EternityCalculator:
         result = 1
         term = 1
         n = 1
+
         while self.manual_abs(term) > 1e-10:
             term *= x / n
             result += term
@@ -190,6 +194,7 @@ class EternityCalculator:
             raise ValueError("Cannot compute square root of a negative number.")
         guess = x
         epsilon = 1e-10
+
         while self.manual_abs(guess * guess - x) > epsilon:
             guess = (guess + x / guess) / 2
         return guess
