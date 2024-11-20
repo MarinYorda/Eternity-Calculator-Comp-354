@@ -69,8 +69,8 @@ class EternityCalculator:
     def calculate_mad(self, *args):
         if not args:
             return 0
-        mean = self.manual_sum(args) / len(args)
-        absolute_sum = self.manual_sum(self.manual_abs(x - mean) for x in args)
+        mean = self.manual_sum(*args) / len(args)
+        absolute_sum = self.manual_sum(*(self.manual_abs(x - mean) for x in args))
         mad = absolute_sum / len(args)
         return mad
 
