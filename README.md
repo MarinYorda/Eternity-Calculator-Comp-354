@@ -122,7 +122,7 @@ After launching the web application, manually test each mathematical function by
    Example: `mad([1, 2, 3, 4, 5])` should return `1.2`.
 
 
-# Project Structure
+## Project Structure
 
 The project has the following structure:
 
