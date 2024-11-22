@@ -127,10 +127,15 @@ EternityCalculator/
 
 This project was developed by the following team members for the COMP 354 course:
 
-- Doan Gia Huy Vu (Your role)
-- [Team Member 1] (Role)
-- [Team Member 2] (Role)
-- [Team Member 3] (Role)
+- Ruturajsinh Vihol(Rue)- 40154693
+- Theodore Trevick- 40272336
+- Lesley Ventura 40281652
+- Doan Gia Huy (that guy)-40200193
+- Marin Yordanov 40213657
+- Bailin Ye 40192743
+- Omar Zaari 40194212
+- Tian Run Xu 40037509
+
 
 ## Future Enhancements
 
