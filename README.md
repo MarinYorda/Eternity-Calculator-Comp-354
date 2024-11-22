@@ -126,6 +126,8 @@ After launching the web application, manually test each mathematical function by
 
 The project has the following structure:
 
+
+```md
 EternityCalculator/
 │
 ├── app/
