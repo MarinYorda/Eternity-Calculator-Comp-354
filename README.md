@@ -100,6 +100,27 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
      ```
 
    - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
+  
+## Manual Testing
+
+After launching the web application, manually test each mathematical function by entering various inputs into the calculator and verifying that the results match expected outcomes. Below are some example test cases:
+
+1. **log_b(10, 2)**  
+   Expected outcome: Returns the base-2 logarithm of 10.  
+   Example: `log_b(10, 2)` should return approximately `3.3219`.
+
+2. **arccos(0.5)**  
+   Expected outcome: Returns the arccosine of 0.5.  
+   Example: `arccos(0.5)` should return approximately `1.0472` radians or `60°`.
+
+3. **exp(2, 3, 4)**  
+   Expected outcome: Returns `2 * 3^4`.  
+   Example: `exp(2, 3, 4)` should return `162` (since `3^4 = 81`, and `2 * 81 = 162`).
+
+4. **mad([1, 2, 3, 4, 5])**  
+   Expected outcome: Calculates the Mean Absolute Deviation for the given list of numbers.  
+   Example: `mad([1, 2, 3, 4, 5])` should return `1.2`.
+
 
 # Project Structure
 
