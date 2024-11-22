@@ -130,7 +130,7 @@ This project was developed by the following team members for the COMP 354 course
 - Ruturajsinh Vihol(Rue)- 40154693
 - Theodore Trevick- 40272336
 - Lesley Ventura 40281652
-- Doan Gia Huy (that guy)-40200193
+- Doan Gia Huy (Adam)-40200193
 - Marin Yordanov 40213657
 - Bailin Ye 40192743
 - Omar Zaari 40194212
