@@ -122,3 +122,4 @@ EternityCalculator/
 ├── README.md                  # This readme file
 ├── requirements.txt           # List of required Python packages
 └── LICENSE                    # License file
+
