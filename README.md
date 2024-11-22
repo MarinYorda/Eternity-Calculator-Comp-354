@@ -96,7 +96,7 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 4. **Run the Application**:
    - Start the application by running:
      ```bash
-     python combine_calculator.py
+     python testing_combine.py
      ```
 
    - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
