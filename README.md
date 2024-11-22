@@ -101,3 +101,24 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 
    - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
 
+# Project Structure
+
+The project has the following structure:
+
+EternityCalculator/
+│
+├── app/
+│   ├── templates/             # HTML templates for the web interface
+│   │   └── combined_calculator_v3.html  # Main HTML template for the calculator
+│   ├── static/                # Static files (CSS, JavaScript)
+│   │   ├── css/               # CSS files
+│   │   │   └── styles.css     # Styles for the web interface
+│   │   └── js/                # JavaScript files
+│   │       └── script.js      # Scripts for the web interface
+│   ├── calculator.py          # Back-end logic for the calculator
+│   └── testing_combine.py     # Unit tests for combined calculator functionality
+│
+├── venv/                      # (Optional) Virtual environment folder
+├── README.md                  # This readme file
+├── requirements.txt           # List of required Python packages
+└── LICENSE                    # License file
