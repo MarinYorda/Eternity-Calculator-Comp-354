@@ -4,6 +4,38 @@
 
 The **Eternity Calculator** is a scientific calculator developed as part of a group project for **COMP 354: Introduction to Software Engineering**. It provides a variety of advanced mathematical functions, including **Logarithms**, **Exponential calculations**, **Gamma function**, **Standard Deviation**, **Mean Absolute Deviation (MAD)**, and more. The project includes both a **back-end** and **front-end** interface, making it a fully functional web-based calculator.
 
+## Installation Instructions
+
+1. **Clone the Repository**:
+   - Open your terminal and run the following command:
+     ```bash
+     git clone <repository-url>
+     ```
+
+2. **Set up Virtual Environment** (Optional but recommended):
+   - In your terminal, create and activate a virtual environment by running:
+     ```bash
+     python -m venv venv
+     ```
+   - To activate the virtual environment, use:
+     ```bash
+     source venv/bin/activate  # On Windows: venv\Scripts\activate
+     ```
+
+3. **Install Dependencies**:
+   - Install the required dependencies by running:
+     ```bash
+     pip install -r requirements.txt
+     pip install flask
+     ```
+
+4. **Run the Application**:
+   - Start the application by running:
+     ```bash
+     python testing_combine.py
+     ```
+
+   - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
 ## Supported Functions
 
 1. **LOG**: Computes the logarithm of a number `x` with a custom base `b`.  
@@ -38,38 +70,6 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 - **Flask**: Web framework used to serve the calculator.
 - **HTML/CSS/JavaScript**: Front-end interface to interact with users.
 - **Bootstrap**: Used for responsive and dynamic UI components.
-
-## Installation Instructions
-
-1. **Clone the Repository**:
-   - Open your terminal and run the following command:
-     ```bash
-     git clone <repository-url>
-     ```
-
-2. **Set up Virtual Environment** (Optional but recommended):
-   - In your terminal, create and activate a virtual environment by running:
-     ```bash
-     python -m venv venv
-     ```
-   - To activate the virtual environment, use:
-     ```bash
-     source venv/bin/activate  # On Windows: venv\Scripts\activate
-     ```
-
-3. **Install Dependencies**:
-   - Install the required dependencies by running:
-     ```bash
-     pip install -r requirements.txt
-     ```
-
-4. **Run the Application**:
-   - Start the application by running:
-     ```bash
-     python testing_combine.py
-     ```
-
-   - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
 
 ### Accessing the Application
 
