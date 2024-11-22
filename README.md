@@ -32,36 +32,6 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 
 ## How to Use the Calculator
 
-### Accessing the Application
-
-- The calculator is hosted as a web application. Once running, you can access it via a browser. 
-- Navigate to the main page where you will see an input field and function buttons.
-
-### Input Format
-
-- Enter expressions directly into the text field using standard mathematical syntax. For example:
-  - `log_b(10, 2)` to compute the logarithm of 10 with base 2.  
-  - `arccos(0.5)` for inverse cosine.  
-  - `exp(2, 3, 4)` for `2 * 3^4`.  
-  - `gamma(5)` to compute the Gamma function of 5.
-
-- After entering an expression, press the `=` button to see the result.
-
-### Functionality
-
-- **LOG**: Computes logarithms with a custom base.
-- **ARCCOS**: Calculates the arccosine of a number.
-- **EXP**: Performs exponential calculations using three parameters.
-- **GAMMA**: Computes the Gamma function for a given number.
-- **MAD**: Calculates the Mean Absolute Deviation of a set of numbers.
-- **STD**: Computes the Standard Deviation for a set of numbers.
-- **SINH**: Computes the hyperbolic sine of a number.
-- **POW**: Computes the power of a number raised to an exponent.
-
-### Error Handling
-
-- The calculator provides clear error messages for unsupported expressions or invalid inputs.
-
 ## Technologies Used
 
 - **Python**: Back-end logic for calculations.
@@ -100,6 +70,36 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
      ```
 
    - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
+
+### Accessing the Application
+
+- The calculator is hosted as a web application. Once running, you can access it via a browser. 
+- Navigate to the main page where you will see an input field and function buttons.
+
+### Input Format
+
+- Enter expressions directly into the text field using standard mathematical syntax. For example:
+  - `log_b(10, 2)` to compute the logarithm of 10 with base 2.  
+  - `arccos(0.5)` for inverse cosine.  
+  - `exp(2, 3, 4)` for `2 * 3^4`.  
+  - `gamma(5)` to compute the Gamma function of 5.
+
+- After entering an expression, press the `=` button to see the result.
+
+### Functionality
+
+- **LOG**: Computes logarithms with a custom base.
+- **ARCCOS**: Calculates the arccosine of a number.
+- **EXP**: Performs exponential calculations using three parameters.
+- **GAMMA**: Computes the Gamma function for a given number.
+- **MAD**: Calculates the Mean Absolute Deviation of a set of numbers.
+- **STD**: Computes the Standard Deviation for a set of numbers.
+- **SINH**: Computes the hyperbolic sine of a number.
+- **POW**: Computes the power of a number raised to an exponent.
+
+### Error Handling
+
+- The calculator provides clear error messages for unsupported expressions or invalid inputs.
   
 ## Manual Testing
 
