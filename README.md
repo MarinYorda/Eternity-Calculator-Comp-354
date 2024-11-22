@@ -90,7 +90,7 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 3. **Install Dependencies**:
    - Install the required dependencies by running:
      ```bash
-     pip install -r requirements.txt
+     pip install flask
      ```
 
 4. **Run the Application**:
