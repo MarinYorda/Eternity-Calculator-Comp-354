@@ -27,37 +27,41 @@ def safe_eval(expression, calculator):
     node = ast.parse(expression, mode='eval')
 
     def eval_node(node):
-        if isinstance(node, ast.BinOp):  # For binary operators like +, -, *, /
-            left = eval_node(node.left)
-            right = eval_node(node.right)
-            if isinstance(node.op, ast.Add):
-                return left + right
-            elif isinstance(node.op, ast.Sub):
-                return left - right
-            elif isinstance(node.op, ast.Mult):
-                return left * right
-            elif isinstance(node.op, ast.Div):
-                return left / right
+        try:
+            if isinstance(node, ast.BinOp):  # For binary operators like +, -, *, /
+                left = eval_node(node.left)
+                right = eval_node(node.right)
+                if isinstance(node.op, ast.Add):
+                    return left + right
+                elif isinstance(node.op, ast.Sub):
+                    return left - right
+                elif isinstance(node.op, ast.Mult):
+                    return left * right
+                elif isinstance(node.op, ast.Div):
+                    return left / right
+                else:
+                    raise ValueError("Unsupported operator")
+            elif isinstance(node, ast.UnaryOp):  # For unary operations like negation (-x)
+                if isinstance(node.op, ast.USub):  # Handle negation
+                    return -eval_node(node.operand)
+                else:
+                    raise ValueError("Unsupported unary operation")
+            elif isinstance(node, ast.Call):  # For function calls
+                func_name = node.func.id
+                if func_name in function_mapping:
+                    args = [eval_node(arg) for arg in node.args]
+                    return function_mapping[func_name](calculator, *args)
+                else:
+                    raise ValueError(f"Unsupported function: {func_name}")
+            elif isinstance(node, ast.Num):  # For numbers
+                return node.n
             else:
-                raise ValueError("Unsupported operator")
-        elif isinstance(node, ast.UnaryOp):  # For unary operations like negation (-x)
-            if isinstance(node.op, ast.USub):  # Handle negation
-                return -eval_node(node.operand)
-            else:
-                raise ValueError("Unsupported unary operation")
-        elif isinstance(node, ast.Call):  # For function calls
-            func_name = node.func.id
-            if func_name in function_mapping:
-                args = [eval_node(arg) for arg in node.args]
-                return function_mapping[func_name](calculator, *args)
-            else:
-                raise ValueError(f"Unsupported function: {func_name}")
-        elif isinstance(node, ast.Num):  # For numbers
-            return node.n
-        else:
-            raise ValueError("Unsupported expression")
+                raise ValueError("Unsupported expression")
+        except TypeError as e:
+            raise ValueError(f"TypeError: {str(e)}. Check your function arguments.")
 
     return eval_node(node.body)
+
 
 
 @app.route('/', methods=['GET', 'POST'])
