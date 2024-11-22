@@ -74,3 +74,35 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 1. **Clone the Repository**:
    ```bash
    git clone <repository-url>
+# Setup Instructions
+
+1. **Clone the Repository**:
+   - Open your terminal and run the following command:
+     ```bash
+     git clone <repository-url>
+     ```
+
+2. **Set up Virtual Environment** (Optional but recommended):
+   - In your terminal, create and activate a virtual environment by running:
+     ```bash
+     python -m venv venv
+     ```
+   - To activate the virtual environment, use:
+     ```bash
+     source venv/bin/activate  # On Windows: venv\Scripts\activate
+     ```
+
+3. **Install Dependencies**:
+   - Install the required dependencies by running:
+     ```bash
+     pip install -r requirements.txt
+     ```
+
+4. **Run the Application**:
+   - Start the application by running:
+     ```bash
+     python combine_calculator.py
+     ```
+
+   - The app will be available at [http://127.0.0.1:5000/](http://127.0.0.1:5000/) in your web browser.
+
