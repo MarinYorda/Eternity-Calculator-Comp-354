@@ -123,3 +123,27 @@ EternityCalculator/
 ├── requirements.txt           # List of required Python packages
 └── LICENSE                    # License file
 
+## Contributors
+
+This project was developed by the following team members for the COMP 354 course:
+
+- Doan Gia Huy Vu (Your role)
+- [Team Member 1] (Role)
+- [Team Member 2] (Role)
+- [Team Member 3] (Role)
+
+## Future Enhancements
+
+Here are some potential improvements that can be added in future versions of the Eternity Calculator:
+
+- **Additional Functions**: Expand the functionality to include more advanced scientific functions such as arcsin, arctan, cosh, etc.
+- **Persistent History**: Implement a history feature that allows users to save and review previous calculations.
+- **User Authentication**: Add user accounts and personalized settings to save user preferences.
+- **Mobile Optimization**: Ensure the web interface is optimized for mobile devices.
+- **Exporting Results**: Allow users to download calculation results as PDF or CSV.
+
+## License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+Thank you for using the Eternity Calculator! If you encounter any issues or have suggestions for improvement, feel free to open an issue on the project's repository.
