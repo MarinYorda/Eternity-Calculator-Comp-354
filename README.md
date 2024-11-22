@@ -84,3 +84,61 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 4. **Run the Application:**:
    ```bash
    python combine_calculator.py
+The app will be available at http://127.0.0.1:5000/ in your web browser.
+Testing the Application
+
+To test the Eternity Calculator, you can follow these steps:
+
+1. Unit Tests:
+The project includes unit tests to ensure the functionality of each calculator feature. Run the following command to execute the unit tests:
+
+python -m unittest discover tests/
+2. Manual Testing:
+After launching the web application, manually test each mathematical function by entering various inputs into the calculator and verifying that the results match expected outcomes. Examples of test cases:
+
+log_b(10, 2) should return the base-2 logarithm of 10.
+arccos(0.5) should return the arccosine of 0.5.
+exp(2, 3, 4) should return 2 * 3^4 = 162.
+mad([1, 2, 3, 4, 5]) should calculate the Mean Absolute Deviation for the given list of numbers.
+Project Structure
+
+The project has the following structure:
+
+EternityCalculator/
+│
+├── app/
+│   ├── templates/             # HTML templates for the web interface
+│   ├── static/                # Static files (CSS, JavaScript)
+│   ├── __init__.py            # Flask app initialization
+│   ├── calculator.py          # Back-end logic for the calculator
+│   ├── combine_calculator.py  # Main file to run the app
+│
+├── tests/
+│   ├── test_calculator.py      # Unit tests for calculator functions
+│
+├── venv/                       # (Optional) Virtual environment folder
+├── README.md                   # This readme file
+├── requirements.txt            # List of required Python packages
+└── LICENSE                     # License file
+Contributors
+
+This project was developed by the following team members for the COMP 354 course:
+
+Doan Gia Huy Vu (Your role)
+[Team Member 1] (Role)
+[Team Member 2] (Role)
+[Team Member 3] (Role)
+Future Enhancements
+
+Here are some potential improvements that can be added in future versions of the Eternity Calculator:
+
+Additional Functions: Expand the functionality to include more advanced scientific functions such as arcsin, arctan, cosh, etc.
+Persistent History: Implement a history feature that allows users to save and review previous calculations.
+User Authentication: Add user accounts and personalized settings to save user preferences.
+Mobile Optimization: Ensure the web interface is optimized for mobile devices.
+Exporting Results: Allow users to download calculation results as PDF or CSV.
+License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
+
+Thank you for using the Eternity Calculator! If you encounter any issues or have suggestions for improvement, feel free to open an issue on the project's repository.
