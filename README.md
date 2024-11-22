@@ -1,6 +1,6 @@
-\# Eternity Calculator - COMP 354
+# Eternity Calculator - COMP 354
 
-\## Overview
+## Overview
 
 The \*\*Eternity Calculator\*\* is a scientific calculator developed as
 part of a group project for \*\*COMP 354: Introduction to Software
