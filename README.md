@@ -72,11 +72,6 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 ## Installation Instructions
 
 1. **Clone the Repository**:
-   ```bash
-   git clone <repository-url>
-# Setup Instructions
-
-1. **Clone the Repository**:
    - Open your terminal and run the following command:
      ```bash
      git clone <repository-url>
