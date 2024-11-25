@@ -130,14 +130,13 @@ The project has the following structure:
 ```md
 EternityCalculator/
 │
-├── app/
-│   ├── templates/             # HTML templates for the web interface
-│   │   └── combined_calculator_v3.html  # Main HTML template for the calculator
-│   ├── static/                # Static files (CSS, JavaScript)
-│   │   ├── css/               # CSS files
-│   │   │   └── styles.css     # Styles for the web interface
-│   │   └── js/                # JavaScript files
-│   │       └── script.js      # Scripts for the web interface
+├── templates/             # HTML templates for the web interface
+│   └── combined_calculator_v3.html  # Main HTML template for the calculator
+├── static/                # Static files (CSS, JavaScript)
+│   ├── css/               # CSS files
+│   │   └── styles.css     # Styles for the web interface
+│   └── js/                # JavaScript files
+│       └── script.js      # Scripts for the web interface
 │   ├── calculator.py          # Back-end logic for the calculator
 │   └── testing_combine.py     # Unit tests for combined calculator functionality
 │
