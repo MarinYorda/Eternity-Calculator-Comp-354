@@ -1,9 +1,9 @@
 from flask import Flask, render_template, request
 from calculator import EternityCalculator
 import ast
+import math
 
 app = Flask(__name__)
-
 
 # Mapping user-friendly function names to calculator methods
 function_mapping = {
@@ -17,6 +17,7 @@ function_mapping = {
     'power': lambda calc, base, exponent: calc.PowerOf(base, exponent),
 }
 
+MAX_RESULT_SIZE = 1e100  # Limit for output size
 
 def safe_eval(expression, calculator):
     """
@@ -24,7 +25,10 @@ def safe_eval(expression, calculator):
     Supports functions defined in function_mapping.
     """
     # Parse the user input as an AST (Abstract Syntax Tree)
-    node = ast.parse(expression, mode='eval')
+    try:
+        node = ast.parse(expression, mode='eval')
+    except SyntaxError:
+        raise ValueError("Invalid input, type [C] to return")
 
     def eval_node(node):
         try:
@@ -50,7 +54,12 @@ def safe_eval(expression, calculator):
                 func_name = node.func.id
                 if func_name in function_mapping:
                     args = [eval_node(arg) for arg in node.args]
-                    return function_mapping[func_name](calculator, *args)
+                    result = function_mapping[func_name](calculator, *args)
+
+                    # Check if the result is too large
+                    if abs(result) > 1e100:
+                        raise ValueError("Result too large, type [C] to return")
+                    return result
                 else:
                     raise ValueError(f"Unsupported function: {func_name}")
             elif isinstance(node, ast.Num):  # For numbers
@@ -63,11 +72,12 @@ def safe_eval(expression, calculator):
     return eval_node(node.body)
 
 
-
 @app.route('/', methods=['GET', 'POST'])
 def combined_calculator():
     error = None
     result = None
+    clear_field = False  # Flag to indicate if the input field should be cleared
+
     if request.method == 'POST':
         input_expression = request.form.get('input_expression')
 
@@ -76,9 +86,14 @@ def combined_calculator():
             result = safe_eval(input_expression, calculator)
         except ValueError as e:
             error = str(e)
+            clear_field = True
 
-    return render_template('combined_calculator_v3.html', result=result, error=error)
-
+    return render_template(
+        './combined_calculator_v3.html',
+        result=result,
+        error=error,
+        clear_field=clear_field
+    )
 
 if __name__ == '__main__':
     app.run(debug=True)
