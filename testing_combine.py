@@ -83,7 +83,7 @@ def safe_eval(expression, calculator):
                 func_name = node.func.id
                 if func_name in function_mapping:
                     args = [eval_node(arg) for arg in node.args]
-                    result = function_mapping[func_name](calculator, *args)
+                    return function_mapping[func_name](calculator, *args)
                 else:
                     raise ValueError(f"Unsupported function: {func_name}")
             elif isinstance(node, ast.Num):  # For numbers
