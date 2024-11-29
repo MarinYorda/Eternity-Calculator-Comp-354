@@ -17,7 +17,6 @@ function_mapping = {
     'power': lambda calc, base, exponent: calc.PowerOf(base, exponent),
 }
 
-
 def validate_input(expression):
     """
     Validates the user input to check for common errors like
@@ -84,7 +83,7 @@ def safe_eval(expression, calculator):
                 func_name = node.func.id
                 if func_name in function_mapping:
                     args = [eval_node(arg) for arg in node.args]
-                    return function_mapping[func_name](calculator, *args)
+                    result = function_mapping[func_name](calculator, *args)
                 else:
                     raise ValueError(f"Unsupported function: {func_name}")
             elif isinstance(node, ast.Num):  # For numbers
@@ -102,6 +101,7 @@ def combined_calculator():
     error = None
     result = None
     input_expression = None
+
     if request.method == 'POST':
         input_expression = request.form.get('input_expression')
 
@@ -115,6 +115,7 @@ def combined_calculator():
             result = safe_eval(input_expression, calculator)
         except ValueError as e:
             error = str(e)
+            clear_field = True
 
     return render_template('combined_calculator_v3.html', result=result, error=error, expression=input_expression)
 
