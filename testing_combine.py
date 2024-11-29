@@ -115,7 +115,6 @@ def combined_calculator():
             result = safe_eval(input_expression, calculator)
         except ValueError as e:
             error = str(e)
-            clear_field = True
 
     return render_template('combined_calculator_v3.html', result=result, error=error, expression=input_expression)
 
