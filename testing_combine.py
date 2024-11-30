@@ -41,13 +41,13 @@ def safe_eval(expression, calculator):
         raise ValueError("Invalid expression. Please enter a valid mathematical expression.")
 
     # Validate for misplaced operators or commas (e.g., starting, ending, or consecutive)
-    if ',,' in expression or expression.startswith((',', '.', '+', '-', '*', '/')) or expression.endswith(
-            (',', '.', '+', '-', '*', '/')):
-        raise ValueError("Invalid syntax. Check the placement of operators or commas.")
+    # if ',,' in expression or expression.startswith((',', '.', '+', '-', '*', '/')) or expression.endswith(
+    #         (',', '.', '+', '-', '*', '/')):
+    #     raise ValueError("Invalid syntax. Check the placement of operators or commas.")
 
     # Check for consecutive operators (like + / or * -)
-    if re.search(r'[+\-*/]{2,}', expression):
-        raise ValueError("Invalid syntax. Consecutive operators are not allowed.")
+    if re.search(r'[+\-*/]{2,}', expression.replace(' ', '')):
+        raise ValueError("Invalid syntax. Consecutive operators are not allowed. Please use parentheses to separate them") #for consecutive operations ex. 13 + (-7) you must use parantheses
 
     # Check for matching parentheses before parsing
     if expression.count('(') != expression.count(')'):
