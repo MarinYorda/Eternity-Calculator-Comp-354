@@ -19,16 +19,17 @@ git --version
 ```
 
 1. **Clone the Repository**:
+   - Repository URL: https://github.com/MarinYorda/Eternity-Calculator-Comp-354.git
    - Open your terminal and run the following command:
      ```bash
      git clone <repository-url>
      ```
    - Navigate into the cloned directory
      ```bash
-     cd <repository-folder-name>
+     cd Eternity-Calculator-Comp-354
      ```
 
-2. **Set up Virtual Environment** (Optional but recommended):
+3. **Set up Virtual Environment** (Optional but recommended):
    - In your terminal, create and activate a virtual environment by running:
      ```bash
      python -m venv venv
@@ -38,7 +39,7 @@ git --version
      source venv/bin/activate  # On Windows: venv\Scripts\activate
      ```
 
-3. **Install Dependencies**:
+4. **Install Dependencies**:
    - Upgrade pip to the latest version to avoid dependency issues:
      ```bash
      pip install --upgrade pip
