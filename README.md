@@ -11,6 +11,10 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
      ```bash
      git clone <repository-url>
      ```
+   - Navigate into the cloned directory"
+     ```bash
+     cd <repository-folder-name>
+     ```
 
 2. **Set up Virtual Environment** (Optional but recommended):
    - In your terminal, create and activate a virtual environment by running:
