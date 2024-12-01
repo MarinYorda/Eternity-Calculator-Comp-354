@@ -6,12 +6,24 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 
 ## Installation Instructions
 
+## Pre-requisites
+Before starting, ensure you have the following installed and configured on your system:
+- **Python** (Version 3.7 or higher)
+- **Git** 
+- **Internet connection** (for downloading dependencies)
+
+To check if Python and Git are installed, run the following commands in your terminal:
+```bash
+python --version
+git --version
+```
+
 1. **Clone the Repository**:
    - Open your terminal and run the following command:
      ```bash
      git clone <repository-url>
      ```
-   - Navigate into the cloned directory"
+   - Navigate into the cloned directory
      ```bash
      cd <repository-folder-name>
      ```
@@ -27,12 +39,16 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
      ```
 
 3. **Install Dependencies**:
+   - Upgrade pip to the latest version to avoid dependency issues:
+     ```bash
+     pip install --upgrade pip
+     ```
    - Install the required dependencies by running:
      ```bash
      pip install flask
      ```
 
-4. **Run the Application**:
+5. **Run the Application**:
    - Start the application by running:
      ```bash
      python testing_combine.py
