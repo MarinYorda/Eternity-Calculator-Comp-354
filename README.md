@@ -6,7 +6,7 @@ The **Eternity Calculator** is a scientific calculator developed as part of a gr
 
 ## Installation Instructions
 
-## Pre-requisites
+### Pre-requisites
 Before starting, ensure you have the following installed and configured on your system:
 - **Python** (Version 3.7 or higher)
 - **Git** 
@@ -83,7 +83,7 @@ git --version
 
 ## How to Use the Calculator
 
-## Technologies Used
+### Technologies Used
 
 - **Python**: Back-end logic for calculations.
 - **Flask**: Web framework used to serve the calculator.
